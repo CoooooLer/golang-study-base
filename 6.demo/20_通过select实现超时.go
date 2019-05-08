@@ -18,7 +18,7 @@ func main() {
 				fmt.Println("num = ", num)
 			case <-time.After(3 * time.Second):
 				fmt.Println("超时")
-				quit <- true
+				quit <- true // 往通道写入数据
 			}
 		}
 	}()
@@ -28,6 +28,6 @@ func main() {
 		time.Sleep(time.Second)
 	}
 
-	<-quit
+	<-quit // 读取通道的数据，如果没有数据，就阻塞
 	fmt.Println("程序结束")
 }
