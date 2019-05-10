@@ -1,0 +1,3 @@
+
+// 最终效果是获取a标签的链接
+re := regexp.MustCompile(`<h1 class="dp-b"><a href="(?s:(.*?))"`) // ?s: 处理换行
